@@ -31,7 +31,6 @@ public class Inference {
             Path modelDir = Paths.get("models");
             model.load(modelDir, Models.MODEL_NAME);
 
-            // define a translator for pre and post processing
             Translator<Image, Classifications> translator = ImageClassificationTranslator.builder()
                     .addTransform(new Resize(Models.IMAGE_WIDTH, Models.IMAGE_HEIGHT))
                     .addTransform(new ToTensor())
